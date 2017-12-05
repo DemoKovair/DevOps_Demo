@@ -46,16 +46,28 @@
             classpathref="DevOps_Demo.classpath" includeantruntime="false" />
     </target>
     <target name="warTarget" depends="compile">
+    	
         <war warfile="DevOps_Demo_Staging.war" webxml="WebContent/WEB-INF/web.xml" update="true" >
             <classes dir="${classes.dir}"/>
             <fileset dir="${pages}"/>
         </war>
+    	
+    	<war warfile="DevOps_Demo_Production.war" webxml="WebContent/WEB-INF/web.xml" update="true" >
+    	            <classes dir="${classes.dir}"/>
+    	            <fileset dir="${pages}"/>
+    	</war>
+    	
         <antcall target="deployTarget_Staging" />
+    	<antcall target="deployTarget_Production" />
     </target>
+	
     <target name="deployTarget_Staging">
-        <copy file="${base}/DevOps_Demo_Staging.war" todir="C:/Users/soladmin/Desktop/WAR Files"/>
-        
+        <copy file="${base}/DevOps_Demo_Staging.war" todir="C:/Users/soladmin/Desktop/WAR Files"/>      
     </target>
+	
+	<target name="deployTarget_Production">
+	        <copy file="${base}/DevOps_Demo_Production.war" todir="C:/Users/soladmin/Desktop/WAR Files"/>      
+	    </target>
 	
     <target name="startTarget">
         <exec executable="${tomcat.bin}/startup.bat"/>
