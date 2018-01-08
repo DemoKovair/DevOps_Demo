@@ -14,8 +14,8 @@
 		<!-- Define the Sonar properties -->
 		<property name="sonar.host.url" value="http://10.10.1.27:9000" />
 		
-		<property name="sonar.projectName" value="JavaDemoApp" />
-		<property name="sonar.projectKey" value="JavaDemoApp" />
+		<property name="sonar.projectName" value="DevOps_Demo" />
+		<property name="sonar.projectKey" value="DevOps_Demo" />
 		<property name="sonar.projectVersion" value="1.2" />
 		<property name="sonar.language" value="java" />
 		<property name="sonar.sources" value="src" />
@@ -26,28 +26,28 @@
 		<property name="sonar.jdbc.password" value="kov$2010$air" />
 
 		<path id="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath">
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/annotations-api.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/catalina-ant.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/catalina-ha.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/catalina-tribes.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/catalina.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/ecj-4.4.2.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/el-api.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/jasper-el.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/jasper.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/jsp-api.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/servlet-api.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat-api.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat-coyote.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat-dbcp.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat-i18n-es.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat-i18n-fr.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat-i18n-ja.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat-jdbc.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat-util.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/tomcat7-websocket.jar"/>
-			<pathelement location="../../../../WebServer/apache-tomcat-7.0.79/lib/websocket-api.jar"/>
-		</path>
+		    	<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/annotations-api.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/catalina-ant.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/catalina-ha.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/catalina-tribes.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/catalina.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/ecj-4.4.2.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/el-api.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/jasper-el.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/jasper.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/jsp-api.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/servlet-api.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-api.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-coyote.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-dbcp.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-i18n-es.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-i18n-fr.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-i18n-ja.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-jdbc.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-util.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat7-websocket.jar"/>
+		    				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/websocket-api.jar"/>
+		    </path>
 		<path id="Web App Libraries.libraryclasspath"/>
 		<path id="EAR Libraries.libraryclasspath"/>
 		<path id="DV1App.classpath">
@@ -55,7 +55,7 @@
 			<path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath"/>
 			<path refid="Web App Libraries.libraryclasspath"/>
 			<path refid="EAR Libraries.libraryclasspath"/>
-			<pathelement location="C:/Users/sd261/Desktop/sonar-ant-task-2.3.jar"/>
+			<pathelement location="C:/Users/soladmin/Desktop/sonar-ant-task-2.3.jar"/>
 		</path>
 	    <target depends="init" name="build"/>
 		<target name="init">
@@ -88,7 +88,7 @@
 		<target name="sonar" depends="build">
 			<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
 				<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
-				<classpath path="C:\Users\sd261\Documents\Eclipse_Sagnik\JavaDemoApp\sonar-ant-task-2.3.jar" />
+				<classpath path="C:/Users/soladmin/Desktop/sonar-ant-task-2.3.jar" />
 			</taskdef>           		
 			<!-- Execute Sonar -->
 			<sonar:sonar />

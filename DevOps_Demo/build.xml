@@ -32,7 +32,7 @@
     				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat7-websocket.jar"/>
     				<pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/websocket-api.jar"/>
     </path>
-    <path id="JavaDemoApp.classpath">
+    <path id="DevOps_Demo.classpath">
         <pathelement location="build/classes"/>
         <path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath"/>
         <pathelement location="C:/WebServer/apache-tomcat-7.0.79/lib/tomcat-util.jar"/>
@@ -43,15 +43,15 @@
     <target name="compile" depends="clean">
         <mkdir dir="${classes.dir}"/>
         <javac srcdir="${src.dir}" destdir="${classes.dir}"
-            classpathref="JavaDemoApp.classpath" includeantruntime="false" />
+            classpathref="DevOps_Demo.classpath" includeantruntime="false" />
     </target>
     <target name="warTarget" depends="compile">
-        <war warfile="JavaDemoApp_Staging.war" webxml="WebContent/WEB-INF/web.xml" update="true" >
+        <war warfile="DevOps_Demo_Staging.war" webxml="WebContent/WEB-INF/web.xml" update="true" >
             <classes dir="${classes.dir}"/>
             <fileset dir="${pages}"/>
         </war>
     	
-    	<war warfile="JavaDemoApp_Production.war" webxml="WebContent/WEB-INF/web.xml" update="true" >
+    	<war warfile="DevOps_Demo_Production.war" webxml="WebContent/WEB-INF/web.xml" update="true" >
     	            <classes dir="${classes.dir}"/>
     	            <fileset dir="${pages}"/>
     	        </war>
@@ -60,12 +60,12 @@
     </target>
 	
     <target name="deployTarget_Staging">
-        <copy file="${base}/JavaDemoApp_Staging.war" todir="C:/Users/sd261/Downloads/DevOps_SagnikApp"/>
+        <copy file="${base}/DevOps_Demo_Staging.war" todir="C:/Users/soladmin/Desktop/WAR Files"/>
         <antcall target="deployTarget_Production" />
     </target>
 	
 	<target name="deployTarget_Production">
-	        <copy file="${base}/JavaDemoApp_Production.war" todir="C:/Users/sd261/Downloads/DevOps_SagnikApp"/>
+	        <copy file="${base}/DevOps_Demo_Production.war" todir="C:/Users/soladmin/Desktop/WAR Files"/>
 	    </target>
 	
     <target name="startTarget">
