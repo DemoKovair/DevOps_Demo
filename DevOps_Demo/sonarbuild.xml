@@ -55,7 +55,6 @@
 			<path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath"/>
 			<path refid="Web App Libraries.libraryclasspath"/>
 			<path refid="EAR Libraries.libraryclasspath"/>
-<<<<<<< HEAD
 			<pathelement location="C:/Users/sagnikd/Desktop/sonar-ant-task-2.3.jar"/>
 		</path>
 	    <target depends="init" name="build"/>
@@ -90,42 +89,6 @@
 			<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
 				<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
 				<classpath path="C:/Users/sagnikd/Desktop/sonar-ant-task-2.3.jar" />
-=======
-			<pathelement location="C:/Users/soladmin/Desktop/sonar-ant-task-2.3.jar"/>
-		</path>
-	    <target depends="init" name="build"/>
-		<target name="init">
-			<mkdir dir="WebContent/WEB-INF/classes"/>
-			<copy includeemptydirs="false" todir="WebContent/WEB-INF/classes">
-				<fileset dir="src">
-					<exclude name="**/*.java"/>
-				</fileset>
-			</copy>
-		</target>
-		<target name="clean">
-			<delete dir="WebContent/WEB-INF/classes"/>
-		</target>
-
-		<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-		<target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-			<copy todir="${ant.library.dir}">
-				<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-			</copy>
-			<unzip dest="${ant.library.dir}">
-				<patternset includes="jdtCompilerAdapter.jar"/>
-				<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-			</unzip>
-		</target>
-		<target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-			<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-			<antcall target="build"/>
-		</target>
-
-		<target name="sonar" depends="build">
-			<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
-				<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
-				<classpath path="C:/Users/soladmin/Desktop/sonar-ant-task-2.3.jar" />
->>>>>>> branch 'master' of https://github.com/DemoKovair/DevOps_Demo.git
 			</taskdef>           		
 			<!-- Execute Sonar -->
 			<sonar:sonar />
