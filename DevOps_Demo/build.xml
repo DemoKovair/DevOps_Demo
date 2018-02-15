@@ -58,12 +58,12 @@
     </target>
 	
     <target name="deployTarget_Staging">
-        <copy file="${base}/DevOps_Demo_Staging.war" todir="/home/kovair/WAR Files"/>
+        <copy file="${base}/DevOps_Demo_Staging.war" todir="/home/kovair/learn-chef/cookbooks/Demo_CookBook/files/default/Details"/>
         <antcall target="deployTarget_Production" />
     </target>
 	
 	<target name="deployTarget_Production">
-	        <copy file="${base}/DevOps_Demo_Production.war" todir="/home/kovair/WAR Files"/>
+	        <copy file="${base}/DevOps_Demo_Production.war" todir="/home/kovair/learn-chef/cookbooks/Demo_CookBook/files/default/Details"/>
 	    </target>
 	
     <target name="startTarget">
