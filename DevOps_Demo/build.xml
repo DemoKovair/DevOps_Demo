@@ -57,8 +57,8 @@
     </target>
 	
 	<target name="deployTarget">
-        <copy file="${base}/DevOps_Demo_Staging.war" todir="C:/WarFiles"/>
-		<copy file="${base}/DevOps_Demo_Production.war" todir="C:/WarFiles"/>
+        <copy file="${base}/DevOps_Demo_Staging.war" todir="C:/WarFiles/StagingWar"/>
+		<copy file="${base}/DevOps_Demo_Production.war" todir="C:/WarFiles/ProductionWar"/>
 	</target>
 	
     <target name="startTarget">
