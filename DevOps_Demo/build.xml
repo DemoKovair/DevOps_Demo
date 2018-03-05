@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="warTarget"  basedir=".">
     
-    <property name="tomcat" value="/home/kovair/apache-tomcat-7.0.84" />
+    <property name="tomcat" value="C:/Program Files/Apache Software Foundation/Tomcat 7.0" />
     <property name="tomcat.deployment" value="${tomcat}/webapps" />
     <property name="tomcat.bin" value="${tomcat}/bin" />
     <property name="base" value="." />
@@ -10,32 +10,32 @@
     <property name="classes.dir" value="${build.dir}/classes"/>
     <property name="pages" value="${base}/WebContent" />
     <path id="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath">
-    	            <pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/annotations-api.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/catalina-ant.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/catalina-ha.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/catalina-tribes.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/catalina.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/ecj-4.4.2.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/el-api.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/jasper-el.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/jasper.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/jsp-api.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/servlet-api.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-api.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-coyote.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-dbcp.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-i18n-es.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-i18n-fr.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-i18n-ja.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-jdbc.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-util.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat7-websocket.jar"/>
-    				<pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/websocket-api.jar"/>
+    	            <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/annotations-api.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/catalina-ant.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/catalina-ha.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/catalina-tribes.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/catalina.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/ecj-4.4.2.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/el-api.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/jasper-el.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/jasper.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/jsp-api.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/servlet-api.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-api.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-coyote.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-dbcp.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-i18n-es.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-i18n-fr.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-i18n-ja.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-jdbc.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-util.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat7-websocket.jar"/>
+    				<pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/websocket-api.jar"/>
     </path>
     <path id="DevOps_Demo.classpath">
         <pathelement location="build/classes"/>
         <path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath"/>
-        <pathelement location="/home/kovair/apache-tomcat-7.0.84/lib/tomcat-util.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-util.jar"/>
     </path>
    
     <target name="compile">
@@ -53,7 +53,13 @@
     	            <classes dir="${classes.dir}"/>
     	            <fileset dir="${pages}"/>
     	</war>
+    	<antcall target="deployTarget" />
     </target>
+	
+	<target name="deployTarget">
+        <copy file="${base}/DevOps_Demo_Staging.war" todir="C:/WarFiles"/>
+		<copy file="${base}/DevOps_Demo_Production.war" todir="C:/WarFiles"/>
+	</target>
 	
     <target name="startTarget">
         <exec executable="${tomcat.bin}/startup.bat"/>
